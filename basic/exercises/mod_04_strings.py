@@ -3,7 +3,9 @@
 u'''
 Exercises MOD 04: Strings
 '''
+from checkbox.lib.text import split
 import unittest
+import string
 
 
 def sum_chars_text(text):
@@ -13,7 +15,10 @@ def sum_chars_text(text):
             >>> ord(c)
             99
     '''
-    pass
+    result = 0
+    for letter in text:
+        result += ord(letter)
+    return result
 
 
 def reverse_text_by_word(text):
@@ -22,7 +27,9 @@ def reverse_text_by_word(text):
         >>> reverse_text_by_word('Sparse is better than dense.')
         'dense. than better is Sparse'
     '''
-    pass
+    split_text = string.split(text, " ")
+    split_text.reverse()
+    return " ".join(split_text)
 
 
 def remove_identation_multiline_string(text):
@@ -32,7 +39,8 @@ def remove_identation_multiline_string(text):
                                                   Flat is better than nested.""")
         "Complex is better than complicated. Flat is better than nested."
     '''
-    pass
+
+    return " ".join(text.split())
 
 
 def join_str_unicode(*items):
@@ -41,7 +49,8 @@ def join_str_unicode(*items):
         >>> print join_str_unicode(u'el señor', 'de los anillos')
         'el señor de los anillos'
     '''
-    pass
+    result = " ".join(items)
+    return result.decode("utf-8")
 
 
 class ModStringTestCase(unittest.TestCase):
