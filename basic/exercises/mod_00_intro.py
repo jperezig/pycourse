@@ -15,7 +15,7 @@ def minimum(a, b):
         >>> minimum(8, 5)
         5
         """
-    # your code here
+    return min(a, b)
 
 
 def maximum3(a, b, c):
@@ -28,7 +28,7 @@ def maximum3(a, b, c):
     	>>> maximum3(2, 13, 5)
         13
     """
-    # your code here
+    return max(a, max(b, c))
 
 
 def istrcmp(s1, s2):
@@ -41,8 +41,7 @@ def istrcmp(s1, s2):
     	>>> istrcmp("foo", "Bar")
         False
     """
-    # your code here
-
+    return s1.lower() == s2.lower()
 
 def unique(values):
     """Finds all unique elements of a list.
@@ -54,8 +53,7 @@ def unique(values):
         >>> unique([1, 2, 1, 3, 4, 2])
         [1, 2, 3, 4]
     """
-    # your code here
-
+    return list(set(values))
 
 def isort(names):
     """Sorts a list of strings ignoring the case.
@@ -63,5 +61,4 @@ def isort(names):
         >>> isort(['BOB', 'ALICE', 'dave', 'charlie'])
         ['ALICE', 'BOB', 'charlie', 'dave']
     """
-    # your code here
-
+    return sorted(names, key=str.lower)
